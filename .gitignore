@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# --- F1 Project Specific ---
+# Veri dosyaları (Kaggle verileri çok büyük olduğu için repoya eklenmez)
+data/raw/*.csv
+data/processed/*.csv
+data/raw/*.zip
+
+# Sanal ortam ismin farklıysa (f1_env kullanıyorsan ekle)
+f1_env/
+
+# Mac kullanıcısı olduğun için sistem dosyaları
+.DS_Store
