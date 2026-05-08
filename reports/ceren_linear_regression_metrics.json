@@ -1,0 +1,30 @@
+{
+  "train_seasons": "2018-2023",
+  "test_season": 2024,
+  "rows_train": 2456,
+  "rows_test": 478,
+  "target": "finish_position",
+  "features_used_in_model": [
+    "grid",
+    "driver_form_score",
+    "weekend_readiness",
+    "driver_season_momentum"
+  ],
+  "engineered_features": {
+    "driver_form_score": "0.7 * last_3_race_avg_finish + 0.3 * last_5_race_avg_finish",
+    "weekend_readiness": "0.5 * qualifying_position + 0.3 * driver_prev_circuit_avg_finish + 0.2 * driver_championship_position_before_race",
+    "driver_season_momentum": "driver_season_points_before_race / driver_season_races_before_race"
+  },
+  "coefficients": {
+    "intercept": 5.875878106158527,
+    "grid": 0.3282148725345605,
+    "driver_form_score": 0.08442694813125984,
+    "weekend_readiness": 0.1506458679152914,
+    "driver_season_momentum": -0.21699935078599786
+  },
+  "metrics": {
+    "mae": 2.8967717513549163,
+    "rmse": 3.75291494490331,
+    "r2": 0.5756007822055411
+  }
+}
