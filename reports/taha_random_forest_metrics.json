@@ -1,0 +1,29 @@
+{
+  "model": "Random Forest Regressor",
+  "owner": "Taha",
+  "train_seasons": "2018-2023",
+  "test_season": 2024,
+  "target": "finish_position",
+  "features_used_in_model": [
+    "grid",
+    "driver_form_score",
+    "weekend_readiness",
+    "driver_season_momentum",
+    "driver_recent_improvement",
+    "driver_consistency_score"
+  ],
+  "engineered_features": {
+    "driver_recent_improvement": "last_5_race_avg_finish - last_3_race_avg_finish",
+    "driver_consistency_score": "absolute difference between last 3 race average finish and last 5 race average finish"
+  },
+  "analysis_notes": {
+    "model_type": "Non-linear ensemble model",
+    "reason_for_selection": "Random Forest was selected because race performance depends on non-linear interactions between grid position, recent form, season momentum and driver consistency.",
+    "interpretability": "Feature importance was used to explain which variables contributed most to the model predictions."
+  },
+  "metrics": {
+    "mae": 3.032757954297139,
+    "rmse": 3.880740219368883,
+    "r2": 0.5461981370445816
+  }
+}

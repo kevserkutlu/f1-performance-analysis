@@ -15,6 +15,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from sklearn.ensemble import RandomForestRegressor
+from random_forest import random_forest
+from evaluation import create_model_comparison_chart
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -370,10 +373,10 @@ def main() -> None:
     # ── EDA chart ────────────────────────────────────────────────────────────
     plot_grid_vs_finish(df, OUTPUT_DIR / "eda_grid_vs_finish.png")
 
-    # ── Ceren's model + Kevser's diagnostics ─────────────────────────────────
+    # ── Ceren's model + Kevser's diagnostics + Taha's random forest ─────────────────────────────────
     frame = build_features(df)
     run_ceren_linear_regression(frame)
-
-
+    random_forest(frame, OUTPUT_DIR)
+    create_model_comparison_chart(OUTPUT_DIR)
 if __name__ == "__main__":
     main()

@@ -19,7 +19,7 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,18,Singapore Grand Prix,Alexander Albon,Williams,11,11.0,10.36,11.5,0.7058823529411765,20,11.94,8.06
 2024,19,United States Grand Prix,Alexander Albon,Williams,14,16.0,12.119999999999997,13.299999999999999,0.6666666666666666,16,13.35,2.65
 2024,20,Mexico City Grand Prix,Alexander Albon,Williams,9,9.0,13.993333333333332,9.7,0.631578947368421,19,11.34,7.66
-2024,21,São Paulo Grand Prix,Alexander Albon,Williams,7,7.0,17.093333333333334,10.9,0.6,18,11.13,6.87
+2024,21,São Paulo Grand Prix,Alexander Albon,Williams,7,7.0,17.093333333333327,10.9,0.6,18,11.13,6.87
 2024,22,Las Vegas Grand Prix,Alexander Albon,Williams,17,18.0,17.166666666666668,15.4,0.5714285714285714,19,15.1,3.9
 2024,23,Qatar Grand Prix,Alexander Albon,Williams,16,16.0,18.586666666666666,14.700000000000001,0.5454545454545454,15,14.79,0.21
 2024,24,Abu Dhabi Grand Prix,Alexander Albon,Williams,18,16.0,17.35333333333333,13.775,0.5217391304347826,11,15.21,4.21
@@ -51,8 +51,8 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,17,Azerbaijan Grand Prix,Oliver Bearman,Haas F1 Team,10,11.0,7.0,8.5,6.0,10,9.73,0.27
 2024,21,São Paulo Grand Prix,Oliver Bearman,Haas F1 Team,15,17.0,8.5,11.5,3.5,12,12.49,0.49
 2024,1,Bahrain Grand Prix,Valtteri Bottas,Sauber,16,16.0,16.87333333333333,9.785714285714285,0.0,19,14.03,4.97
-2024,2,Saudi Arabian Grand Prix,Valtteri Bottas,Sauber,16,16.0,17.993333333333332,13.6,0.0,17,14.7,2.3
-2024,3,Australian Grand Prix,Valtteri Bottas,Sauber,13,13.0,18.113333333333333,10.6,0.0,14,13.27,0.73
+2024,2,Saudi Arabian Grand Prix,Valtteri Bottas,Sauber,16,16.0,17.99333333333333,13.6,0.0,17,14.7,2.3
+2024,3,Australian Grand Prix,Valtteri Bottas,Sauber,13,13.0,18.11333333333333,10.6,0.0,14,13.27,0.73
 2024,4,Japanese Grand Prix,Valtteri Bottas,Sauber,13,13.0,16.826666666666664,12.15,0.0,14,13.39,0.61
 2024,5,Chinese Grand Prix,Valtteri Bottas,Sauber,10,10.0,15.48,8.2,0.0,20,11.7,8.3
 2024,6,Miami Grand Prix,Valtteri Bottas,Sauber,16,16.0,16.24,13.8,0.0,16,14.58,1.42
@@ -189,9 +189,9 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,3,Australian Grand Prix,Charles Leclerc,Ferrari,4,5.0,3.9599999999999995,6.025,14.0,2,5.39,3.39
 2024,4,Japanese Grand Prix,Charles Leclerc,Ferrari,8,8.0,2.88,6.725,15.666666666666666,4,6.36,2.36
 2024,5,Chinese Grand Prix,Charles Leclerc,Ferrari,6,6.0,2.9999999999999996,7.199999999999999,14.75,4,5.98,1.98
-2024,6,Miami Grand Prix,Charles Leclerc,Ferrari,2,2.0,3.3533333333333335,2.9499999999999997,14.2,3,4.18,1.18
+2024,6,Miami Grand Prix,Charles Leclerc,Ferrari,2,2.0,3.353333333333333,2.9499999999999997,14.2,3,4.18,1.18
 2024,7,Emilia Romagna Grand Prix,Charles Leclerc,Ferrari,3,4.0,3.5266666666666664,4.1,14.333333333333334,3,4.67,1.67
-2024,8,Monaco Grand Prix,Charles Leclerc,Ferrari,1,1.0,3.2933333333333334,4.98,14.428571428571429,1,4.1,3.1
+2024,8,Monaco Grand Prix,Charles Leclerc,Ferrari,1,1.0,3.293333333333333,4.98,14.428571428571429,1,4.1,3.1
 2024,9,Canadian Grand Prix,Charles Leclerc,Ferrari,11,11.0,2.533333333333333,7.550000000000001,15.75,19,7.42,11.58
 2024,10,Spanish Grand Prix,Charles Leclerc,Ferrari,5,5.0,7.166666666666666,6.6,14.0,5,6.08,1.08
 2024,11,Austrian Grand Prix,Charles Leclerc,Ferrari,6,6.0,7.693333333333333,5.475,13.6,11,6.37,4.63
@@ -200,7 +200,7 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,14,Belgian Grand Prix,Charles Leclerc,Ferrari,1,2.0,9.946666666666665,4.1,11.384615384615385,3,5.19,2.19
 2024,15,Dutch Grand Prix,Charles Leclerc,Ferrari,6,6.0,7.119999999999999,6.299999999999999,11.642857142857142,3,6.87,3.87
 2024,16,Italian Grand Prix,Charles Leclerc,Ferrari,4,4.0,4.433333333333334,4.6,11.866666666666667,1,5.68,4.68
-2024,17,Azerbaijan Grand Prix,Charles Leclerc,Ferrari,1,1.0,3.1333333333333333,3.3200000000000003,12.6875,2,4.22,2.22
+2024,17,Azerbaijan Grand Prix,Charles Leclerc,Ferrari,1,1.0,3.133333333333333,3.3200000000000003,12.6875,2,4.22,2.22
 2024,18,Singapore Grand Prix,Charles Leclerc,Ferrari,9,9.0,2.1799999999999997,6.375,13.0,5,7.15,2.15
 2024,19,United States Grand Prix,Charles Leclerc,Ferrari,4,4.0,2.7066666666666666,5.359999999999999,12.833333333333334,1,5.44,4.44
 2024,20,Mexico City Grand Prix,Charles Leclerc,Ferrari,4,4.0,2.5866666666666664,4.1,13.473684210526315,3,5.1,2.1
@@ -227,17 +227,17 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,17,Azerbaijan Grand Prix,Max Verstappen,Red Bull,6,6.0,3.9399999999999995,5.659999999999999,17.4375,5,5.25,0.25
 2024,18,Singapore Grand Prix,Max Verstappen,Red Bull,2,2.0,4.353333333333333,2.475,17.0,2,3.58,1.58
 2024,19,United States Grand Prix,Max Verstappen,Red Bull,2,2.0,4.173333333333333,1.68,17.055555555555557,3,3.44,0.44
-2024,20,Mexico City Grand Prix,Max Verstappen,Red Bull,2,2.0,3.4133333333333336,1.8,16.94736842105263,6,3.41,2.59
+2024,20,Mexico City Grand Prix,Max Verstappen,Red Bull,2,2.0,3.413333333333333,1.8,16.94736842105263,6,3.41,2.59
 2024,21,São Paulo Grand Prix,Max Verstappen,Red Bull,17,12.0,3.8866666666666667,6.92,16.5,1,9.25,8.25
-2024,22,Las Vegas Grand Prix,Max Verstappen,Red Bull,5,5.0,3.3533333333333335,3.0,16.952380952380953,5,4.57,0.43
+2024,22,Las Vegas Grand Prix,Max Verstappen,Red Bull,5,5.0,3.353333333333333,3.0,16.952380952380953,5,4.57,0.43
 2024,23,Qatar Grand Prix,Max Verstappen,Red Bull,2,1.0,3.82,1.15,16.636363636363637,1,3.42,2.42
-2024,24,Abu Dhabi Grand Prix,Max Verstappen,Red Bull,4,5.0,2.5933333333333333,3.1500000000000004,17.0,6,4.19,1.81
+2024,24,Abu Dhabi Grand Prix,Max Verstappen,Red Bull,4,5.0,2.593333333333333,3.1500000000000004,17.0,6,4.19,1.81
 2024,1,Bahrain Grand Prix,Lando Norris,McLaren,7,7.0,8.34,6.500000000000001,0.0,6,9.86,3.86
 2024,2,Saudi Arabian Grand Prix,Lando Norris,McLaren,6,6.0,9.513333333333334,7.4,8.0,8,8.03,0.03
 2024,3,Australian Grand Prix,Lando Norris,McLaren,3,4.0,6.893333333333333,5.7,6.0,3,7.0,4.0
 2024,4,Japanese Grand Prix,Lando Norris,McLaren,3,3.0,6.486666666666666,5.0,9.0,5,6.21,1.21
 2024,5,Chinese Grand Prix,Lando Norris,McLaren,4,4.0,5.3533333333333335,8.399999999999999,9.25,2,6.9,4.9
-2024,6,Miami Grand Prix,Lando Norris,McLaren,5,5.0,3.7733333333333334,8.899999999999999,11.0,1,6.79,5.79
+2024,6,Miami Grand Prix,Lando Norris,McLaren,5,5.0,3.773333333333333,8.899999999999999,11.0,1,6.79,5.79
 2024,7,Emilia Romagna Grand Prix,Lando Norris,McLaren,2,3.0,3.0066666666666664,3.7,13.333333333333334,2,4.45,2.45
 2024,8,Monaco Grand Prix,Lando Norris,McLaren,4,4.0,1.9466666666666668,4.775,14.0,4,5.03,1.03
 2024,9,Canadian Grand Prix,Lando Norris,McLaren,3,3.0,2.473333333333333,6.9,13.75,2,5.13,3.13
@@ -246,7 +246,7 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,12,British Grand Prix,Lando Norris,McLaren,3,3.0,7.3999999999999995,3.75,13.363636363636363,3,5.15,2.15
 2024,13,Hungarian Grand Prix,Lando Norris,McLaren,1,1.0,7.693333333333333,3.6599999999999997,13.5,2,4.48,2.48
 2024,14,Belgian Grand Prix,Lando Norris,McLaren,4,5.0,7.573333333333333,5.96,13.846153846153847,5,5.72,0.72
-2024,15,Dutch Grand Prix,Lando Norris,McLaren,1,1.0,4.253333333333334,3.3,13.571428571428571,1,4.12,3.12
+2024,15,Dutch Grand Prix,Lando Norris,McLaren,1,1.0,4.253333333333333,3.3,13.571428571428571,1,4.12,3.12
 2024,16,Italian Grand Prix,Lando Norris,McLaren,1,1.0,3.7266666666666666,2.76,14.4,3,3.81,0.81
 2024,17,Azerbaijan Grand Prix,Lando Norris,McLaren,15,16.0,2.9399999999999995,10.725,14.5,4,9.52,5.52
 2024,18,Singapore Grand Prix,Lando Norris,McLaren,1,1.0,2.7666666666666666,2.1999999999999997,14.411764705882353,1,3.64,2.64
@@ -283,7 +283,7 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,3,Australian Grand Prix,Sergio Pérez,Red Bull,6,3.0,2.7666666666666666,4.225,18.0,5,4.81,0.19
 2024,4,Japanese Grand Prix,Sergio Pérez,Red Bull,2,2.0,3.0599999999999996,4.3,15.333333333333334,2,4.11,2.11
 2024,5,Chinese Grand Prix,Sergio Pérez,Red Bull,2,2.0,2.9999999999999996,4.4,16.0,3,3.98,0.98
-2024,6,Miami Grand Prix,Sergio Pérez,Red Bull,4,4.0,3.1733333333333333,3.3,15.8,4,4.53,0.53
+2024,6,Miami Grand Prix,Sergio Pérez,Red Bull,4,4.0,3.173333333333333,3.3,15.8,4,4.53,0.53
 2024,7,Emilia Romagna Grand Prix,Sergio Pérez,Red Bull,11,11.0,3.0599999999999996,7.800000000000001,15.166666666666666,8,7.63,0.37
 2024,8,Monaco Grand Prix,Sergio Pérez,Red Bull,16,16.0,4.82,11.5,13.571428571428571,18,10.32,7.68
 2024,9,Canadian Grand Prix,Sergio Pérez,Red Bull,16,16.0,9.1,12.9,11.875,18,11.26,6.74
@@ -315,11 +315,11 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,11,Austrian Grand Prix,Oscar Piastri,McLaren,7,7.0,5.126666666666667,9.5,8.2,2,8.26,6.26
 2024,12,British Grand Prix,Oscar Piastri,McLaren,5,5.0,4.466666666666667,4.9,9.090909090909092,4,6.66,2.66
 2024,13,Hungarian Grand Prix,Oscar Piastri,McLaren,2,2.0,4.2333333333333325,3.5,9.333333333333334,1,5.39,4.39
-2024,14,Belgian Grand Prix,Oscar Piastri,McLaren,5,6.0,2.7733333333333334,10.0,10.538461538461538,2,6.97,4.97
-2024,15,Dutch Grand Prix,Oscar Piastri,McLaren,3,3.0,2.5933333333333333,4.999999999999999,11.071428571428571,4,5.43,1.43
+2024,14,Belgian Grand Prix,Oscar Piastri,McLaren,5,6.0,2.773333333333333,10.0,10.538461538461538,2,6.97,4.97
+2024,15,Dutch Grand Prix,Oscar Piastri,McLaren,3,3.0,2.593333333333333,4.999999999999999,11.071428571428571,4,5.43,1.43
 2024,16,Italian Grand Prix,Oscar Piastri,McLaren,2,2.0,2.413333333333333,5.3999999999999995,11.133333333333333,2,5.13,3.13
 2024,17,Azerbaijan Grand Prix,Oscar Piastri,McLaren,2,2.0,2.6466666666666665,5.1,11.5625,1,5.01,4.01
-2024,18,Singapore Grand Prix,Oscar Piastri,McLaren,5,5.0,2.2333333333333334,5.3999999999999995,12.352941176470589,3,5.84,2.84
+2024,18,Singapore Grand Prix,Oscar Piastri,McLaren,5,5.0,2.233333333333333,5.3999999999999995,12.352941176470589,3,5.84,2.84
 2024,19,United States Grand Prix,Oscar Piastri,McLaren,5,5.0,2.12,8.4,12.5,5,6.25,1.25
 2024,20,Mexico City Grand Prix,Oscar Piastri,McLaren,17,17.0,2.9999999999999996,11.700000000000001,12.368421052631579,8,10.79,2.79
 2024,21,São Paulo Grand Prix,Oscar Piastri,McLaren,8,8.0,4.873333333333333,9.0,11.95,8,7.68,0.32
@@ -387,7 +387,7 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,18,Singapore Grand Prix,Carlos Sainz,Ferrari,10,10.0,8.64,7.8,10.75,7,8.73,1.73
 2024,19,United States Grand Prix,Carlos Sainz,Ferrari,3,3.0,9.166666666666666,5.199999999999999,10.470588235294118,2,6.15,4.15
 2024,20,Mexico City Grand Prix,Carlos Sainz,Ferrari,1,1.0,8.46,4.32,10.88888888888889,1,5.21,4.21
-2024,21,São Paulo Grand Prix,Carlos Sainz,Ferrari,20,14.0,4.253333333333334,9.8,11.631578947368421,16,11.75,4.25
+2024,21,São Paulo Grand Prix,Carlos Sainz,Ferrari,20,14.0,4.253333333333333,9.8,11.631578947368421,16,11.75,4.25
 2024,22,Las Vegas Grand Prix,Carlos Sainz,Ferrari,2,2.0,7.073333333333332,3.8,11.05,3,5.3,2.3
 2024,23,Qatar Grand Prix,Carlos Sainz,Ferrari,7,7.0,6.406666666666667,8.55,11.238095238095237,6,7.56,1.56
 2024,24,Abu Dhabi Grand Prix,Carlos Sainz,Ferrari,3,3.0,7.513333333333333,4.85,11.090909090909092,2,5.82,3.82
@@ -400,7 +400,7 @@ season,race_round,race_name,driver_full_name,constructor_name,grid,qualifying_po
 2024,8,Monaco Grand Prix,Logan Sargeant,Williams,15,15.0,17.7,15.7,0.0,15,14.66,0.34
 2024,9,Canadian Grand Prix,Logan Sargeant,Williams,13,13.0,17.29333333333333,15.5,0.0,20,13.94,6.06
 2024,10,Spanish Grand Prix,Logan Sargeant,Williams,19,20.0,17.47333333333333,19.2,0.0,20,16.48,3.52
-2024,11,Austrian Grand Prix,Logan Sargeant,Williams,19,19.0,18.35333333333333,16.8,0.0,19,16.19,2.81
+2024,11,Austrian Grand Prix,Logan Sargeant,Williams,19,19.0,18.353333333333328,16.8,0.0,19,16.19,2.81
 2024,12,British Grand Prix,Logan Sargeant,Williams,12,12.0,19.226666666666667,12.5,0.0,11,13.32,2.32
 2024,13,Hungarian Grand Prix,Logan Sargeant,Williams,14,14.0,16.766666666666666,15.599999999999998,0.0,17,14.24,2.76
 2024,14,Belgian Grand Prix,Logan Sargeant,Williams,18,19.0,16.186666666666664,18.0,0.0,17,15.86,1.14
