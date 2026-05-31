@@ -1,4 +1,4 @@
-const API_ENDPOINT = "/api/predict";
+const API_ENDPOINT = "http://127.0.0.1:5000/predict";
 
 const form = document.querySelector("#predictForm");
 const statusText = document.querySelector("#apiStatus");
@@ -194,7 +194,12 @@ async function requestPrediction(payload) {
     throw new Error(`API returned ${response.status}`);
   }
 
-  return response.json();
+  const data = await response.json();
+  return {
+    predicted_finish_position: data.predicted_finish_position ?? data.prediction,
+    source: data.source ?? "backend-api",
+    used_features: data.used_features,
+  };
 }
 
 function createDemoPrediction(payload) {
