@@ -17,10 +17,10 @@
   },
   "coefficients": {
     "intercept": 5.875878106158496,
-    "grid": 0.32821487253456283,
-    "driver_form_score": 0.08442694813125881,
-    "weekend_readiness": 0.15064586791529183,
-    "driver_season_momentum": -0.21699935078599825
+    "grid": 0.32821487253456344,
+    "driver_form_score": 0.08442694813125831,
+    "weekend_readiness": 0.15064586791529222,
+    "driver_season_momentum": -0.2169993507859982
   },
   "metrics": {
     "mae": 2.8967717513549096,
