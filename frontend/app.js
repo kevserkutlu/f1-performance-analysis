@@ -13,6 +13,7 @@ const soundIcon = document.querySelector("#soundIcon");
 const chart = document.querySelector("#predictionChart");
 const ctx = chart.getContext("2d");
 const resultPanel = document.querySelector(".result-panel");
+const raceLights = document.querySelector("#raceLights");
 
 let soundEnabled = true;
 let audioContext;
@@ -93,6 +94,20 @@ function flashTimingPanel() {
   resultPanel.classList.remove("is-updating");
   window.requestAnimationFrame(() => {
     resultPanel.classList.add("is-updating");
+  });
+}
+
+function startRaceLights() {
+  raceLights.classList.remove("is-running");
+
+  return new Promise((resolve) => {
+    window.requestAnimationFrame(() => {
+      raceLights.classList.add("is-running");
+      window.setTimeout(() => {
+        raceLights.classList.remove("is-running");
+        resolve();
+      }, 1180);
+    });
   });
 }
 
@@ -318,12 +333,15 @@ async function handleSubmit(event) {
   playShiftSound();
   flashTimingPanel();
   setStatus("Calling API", "");
+  const lights = startRaceLights();
 
   try {
     const prediction = await requestPrediction(payload);
+    await lights;
     renderResult(payload, prediction, "success");
     setStatus("API connected", "success");
   } catch (error) {
+    await lights;
     const demoPrediction = createDemoPrediction(payload);
     renderResult(payload, demoPrediction, "warning");
     setStatus("Demo fallback", "warning");
