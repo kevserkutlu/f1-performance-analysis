@@ -264,67 +264,6 @@ function createDemoPrediction(payload) {
   };
 }
 
-function clamp(value, min, max) {
-  return Math.min(max, Math.max(min, value));
-}
-
-function getScenarioPosition(payload) {
-  const gridBadness = (clamp(payload.grid, 1, 20) - 1) / 19;
-  const formBadness = (clamp(payload.driver_form_score, 1, 20) - 1) / 19;
-  const readinessBadness = (clamp(payload.weekend_readiness, 1, 20) - 1) / 19;
-  const recentBadness = (clamp(payload.last_3_race_avg_finish, 1, 20) - 1) / 19;
-  const consistencyBadness =
-    clamp(Math.abs(payload.last_5_race_avg_finish - payload.last_3_race_avg_finish), 0, 19) / 19;
-  const momentumBadness = 1 - clamp(payload.driver_season_momentum, 0, 30) / 30;
-  const averageBadness =
-    (
-      gridBadness * 1.25 +
-      formBadness +
-      readinessBadness +
-      recentBadness +
-      consistencyBadness * 0.65 +
-      momentumBadness
-    ) / 5.9;
-
-  return 1 + averageBadness * 19;
-}
-
-function calibratePrediction(payload, prediction) {
-  const rawValue = Number(prediction.predicted_finish_position);
-  const scenarioValue = getScenarioPosition(payload);
-
-  const isBestCase =
-    payload.grid <= 1.2 &&
-    payload.driver_form_score <= 1.2 &&
-    payload.weekend_readiness <= 1.2 &&
-    payload.last_3_race_avg_finish <= 1.2 &&
-    payload.last_5_race_avg_finish <= 1.6 &&
-    payload.driver_season_momentum >= 28;
-
-  const isWorstCase =
-    payload.grid >= 19.8 &&
-    payload.driver_form_score >= 19.8 &&
-    payload.weekend_readiness >= 19.8 &&
-    payload.last_3_race_avg_finish >= 19.8 &&
-    payload.last_5_race_avg_finish >= 19.8 &&
-    payload.driver_season_momentum <= 2;
-
-  if (isBestCase) {
-    return { ...prediction, predicted_finish_position: 1 };
-  }
-
-  if (isWorstCase) {
-    return { ...prediction, predicted_finish_position: 20 };
-  }
-
-  const calibratedValue = rawValue * 0.55 + scenarioValue * 0.45;
-
-  return {
-    ...prediction,
-    predicted_finish_position: Number(clamp(calibratedValue, 1, 20).toFixed(2)),
-  };
-}
-
 function drawChart(payload, prediction) {
   const pixelRatio = window.devicePixelRatio || 1;
   const bounds = chart.getBoundingClientRect();
@@ -443,8 +382,7 @@ async function handleSubmit(event) {
 }
 
 function renderResult(payload, prediction, state) {
-  const calibratedPrediction = calibratePrediction(payload, prediction);
-  const value = Number(calibratedPrediction.predicted_finish_position);
+  const value = Number(prediction.predicted_finish_position);
   predictedPosition.textContent = `P${value.toFixed(1)}`;
   resultExplanation.textContent =
     state === "success"
