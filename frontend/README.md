@@ -17,8 +17,10 @@ Request:
 ```json
 {
   "grid": 4,
-  "driver_form_score": 6.8,
   "weekend_readiness": 5.9,
+  "last_3_race_avg_finish": 5.9,
+  "last_5_race_avg_finish": 7.1,
+  "driver_form_score": 6.26,
   "driver_season_momentum": 13.4
 }
 ```

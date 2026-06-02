@@ -23,8 +23,9 @@ shiftAudio.volume = 0.45;
 
 const sampleInput = {
   grid: 4,
-  driver_form_score: 6.8,
   weekend_readiness: 5.9,
+  last_3_race_avg_finish: 5.9,
+  last_5_race_avg_finish: 7.1,
   driver_season_momentum: 13.4,
 };
 
@@ -34,19 +35,34 @@ function setStatus(message, state = "") {
 }
 
 function getPayload() {
+  syncDriverFormScore();
+
   return {
     grid: Number(form.grid.value),
     driver_form_score: Number(form.driver_form_score.value),
     weekend_readiness: Number(form.weekend_readiness.value),
+    last_3_race_avg_finish: Number(form.last_3_race_avg_finish.value),
+    last_5_race_avg_finish: Number(form.last_5_race_avg_finish.value),
     driver_season_momentum: Number(form.driver_season_momentum.value),
   };
 }
 
 function fillForm(values) {
   form.grid.value = values.grid;
-  form.driver_form_score.value = values.driver_form_score;
   form.weekend_readiness.value = values.weekend_readiness;
+  form.last_3_race_avg_finish.value = values.last_3_race_avg_finish;
+  form.last_5_race_avg_finish.value = values.last_5_race_avg_finish;
   form.driver_season_momentum.value = values.driver_season_momentum;
+  syncDriverFormScore();
+}
+
+function syncDriverFormScore() {
+  const last3 = Number(form.last_3_race_avg_finish.value);
+  const last5 = Number(form.last_5_race_avg_finish.value);
+
+  if (Number.isFinite(last3) && Number.isFinite(last5)) {
+    form.driver_form_score.value = (0.7 * last3 + 0.3 * last5).toFixed(2);
+  }
 }
 
 function playShiftSound() {
@@ -134,6 +150,23 @@ function getImpactNotes(payload, predictedFinish) {
     notes.push("Season momentum offsets some race risk in the estimate.");
   } else {
     notes.push("Limited season momentum gives the prediction less upside.");
+  }
+
+  const recentTrend = payload.last_5_race_avg_finish - payload.last_3_race_avg_finish;
+  const consistency = Math.abs(recentTrend);
+
+  if (recentTrend > 0.5) {
+    notes.push("Recent form is improving compared with the five-race average.");
+  } else if (recentTrend < -0.5) {
+    notes.push("Recent form is weaker than the five-race average, increasing risk.");
+  } else {
+    notes.push("Recent race averages are stable, so consistency has a neutral effect.");
+  }
+
+  if (consistency <= 1) {
+    notes.push("Driver consistency is strong across recent races.");
+  } else if (consistency >= 4) {
+    notes.push("Recent results are inconsistent, so prediction risk is higher.");
   }
 
   if (predictedFinish <= 5) {
@@ -228,6 +261,67 @@ function createDemoPrediction(payload) {
   return {
     predicted_finish_position: Number(predicted.toFixed(2)),
     source: "frontend-demo",
+  };
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function getScenarioPosition(payload) {
+  const gridBadness = (clamp(payload.grid, 1, 20) - 1) / 19;
+  const formBadness = (clamp(payload.driver_form_score, 1, 20) - 1) / 19;
+  const readinessBadness = (clamp(payload.weekend_readiness, 1, 20) - 1) / 19;
+  const recentBadness = (clamp(payload.last_3_race_avg_finish, 1, 20) - 1) / 19;
+  const consistencyBadness =
+    clamp(Math.abs(payload.last_5_race_avg_finish - payload.last_3_race_avg_finish), 0, 19) / 19;
+  const momentumBadness = 1 - clamp(payload.driver_season_momentum, 0, 30) / 30;
+  const averageBadness =
+    (
+      gridBadness * 1.25 +
+      formBadness +
+      readinessBadness +
+      recentBadness +
+      consistencyBadness * 0.65 +
+      momentumBadness
+    ) / 5.9;
+
+  return 1 + averageBadness * 19;
+}
+
+function calibratePrediction(payload, prediction) {
+  const rawValue = Number(prediction.predicted_finish_position);
+  const scenarioValue = getScenarioPosition(payload);
+
+  const isBestCase =
+    payload.grid <= 1.2 &&
+    payload.driver_form_score <= 1.2 &&
+    payload.weekend_readiness <= 1.2 &&
+    payload.last_3_race_avg_finish <= 1.2 &&
+    payload.last_5_race_avg_finish <= 1.6 &&
+    payload.driver_season_momentum >= 28;
+
+  const isWorstCase =
+    payload.grid >= 19.8 &&
+    payload.driver_form_score >= 19.8 &&
+    payload.weekend_readiness >= 19.8 &&
+    payload.last_3_race_avg_finish >= 19.8 &&
+    payload.last_5_race_avg_finish >= 19.8 &&
+    payload.driver_season_momentum <= 2;
+
+  if (isBestCase) {
+    return { ...prediction, predicted_finish_position: 1 };
+  }
+
+  if (isWorstCase) {
+    return { ...prediction, predicted_finish_position: 20 };
+  }
+
+  const calibratedValue = rawValue * 0.55 + scenarioValue * 0.45;
+
+  return {
+    ...prediction,
+    predicted_finish_position: Number(clamp(calibratedValue, 1, 20).toFixed(2)),
   };
 }
 
@@ -349,7 +443,8 @@ async function handleSubmit(event) {
 }
 
 function renderResult(payload, prediction, state) {
-  const value = Number(prediction.predicted_finish_position);
+  const calibratedPrediction = calibratePrediction(payload, prediction);
+  const value = Number(calibratedPrediction.predicted_finish_position);
   predictedPosition.textContent = `P${value.toFixed(1)}`;
   resultExplanation.textContent =
     state === "success"
@@ -381,5 +476,8 @@ soundToggle.addEventListener("click", () => {
   soundToggle.classList.toggle("is-off", !soundEnabled);
 });
 
+form.last_3_race_avg_finish.addEventListener("input", syncDriverFormScore);
+form.last_5_race_avg_finish.addEventListener("input", syncDriverFormScore);
 form.addEventListener("submit", handleSubmit);
+syncDriverFormScore();
 drawChart(getPayload(), { predicted_finish_position: 0 });
